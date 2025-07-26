@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'satoshi';
+    src: url('/fonts/Satoshi-Variable.ttf');
+}
+
+$primary-color: Black;
+$secondary-color: #c9f31d;
+$text-color: White;
+$text-dark: #999999;
+$bg-color : #141410;
+$hover: #c2ec1d9e;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'satoshi';
+    background-color: $bg-color;
+    color: $text-color;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    transition: top 0.5s ease-in-out;
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+
+    nav {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 2.5rem;
+        background-color: rgba(0, 0, 0, 0.377);
+        backdrop-filter: blur(25px);
+        border-bottom: 1px solid $text-dark;
+
+        .logo {
+            scale: 0.9;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 4rem;
+
+            li {
+                font-size: 1.2rem;
+                cursor: pointer;
+            }
+        }
+
+        button {
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            border: none;
+            background-color: $secondary-color;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: $hover;
+            }
+        }
+    }
+}
+
+.hero-section {
+    width: 100%;
+    height: 90%;
+    padding-top: 10rem;
+    background: url('./assets/hero-bg.png');
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .hero-container {
+        h1 {
+            font-size: 7rem;
+            width: 70%;
+        }
+
+        img {
+            position: absolute;
+            top: 5%;
+            right: 15%;
+            transform: translateX(0%);
+        }
+    }
+}
+
+.about-section {
+    height: 100vh;
+}
