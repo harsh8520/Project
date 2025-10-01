@@ -1,0 +1,105 @@
+$bg: linear-gradient(to right, #1E293B, #0F172A);
+$bg-card: rgba(255,255,255,0.05);
+$border: 2px solid rgb(255, 255, 255, 0.1);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter';
+}
+
+body {
+    background: $bg;
+}
+
+main {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem;
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        background-color: rgba(255,255,255,0.05);
+        backdrop-filter: blur(20px);
+        place-items: center;
+        padding: 3rem;
+        border: 2px solid rgb(255, 255, 255, 0.1);
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        gap: 1.2rem;
+
+        h1 {
+            font-size: 2.5rem;
+            color: #60A5FA;
+        }
+
+        button {
+            width: fit-content;
+            display: grid;
+            place-items: center;
+            padding: 0.8rem 2rem;
+            border: none;
+            cursor: pointer;
+            background-color: #3B82F6;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            color: #F1F5F9;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background-color: #60A5FA;
+            }
+
+            &:active {
+                scale: 0.90;
+            }
+        }
+
+        .list-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            ul {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                color: #F1F5F9;
+
+                li {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: $bg-card;
+                    border: $border;
+                    padding: 1rem;
+                    border-radius: 10px;
+
+                    span {
+                        color: #22C55E;
+                    }
+
+                    .stopped{
+                        color: #EF4444;
+                    }
+                }
+            }
+        }
+    }
+}
