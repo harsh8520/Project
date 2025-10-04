@@ -1,0 +1,30 @@
+// Backgrounds
+$bg-gradient: linear-gradient(to right, #1E293B, #0F172A);
+$bg-card: rgba(255, 255, 255, 0.05);
+
+// Borders & shadows
+$border: 1px solid rgba(255, 255, 255, 0.1);
+$shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+// Text
+$text-primary: #F1F5F9;  // near white
+$text-secondary: #94A3B8; // soft gray
+$text-highlight: #60A5FA; // accent blue
+
+// Buttons
+$btn-bg: #3B82F6;
+$btn-hover: #60A5FA;
+$btn-active: #2563EB;
+$btn-text: #F1F5F9;
+
+// Notes
+$note-bg: rgba(255, 255, 255, 0.06);
+$note-hover: rgba(255, 255, 255, 0.1);
+$note-title: #E2E8F0;
+$note-body: #CBD5E1;
+
+// Accent colors for tags/labels
+$tag-blue: #3B82F6;
+$tag-green: #10B981;
+$tag-yellow: #FACC15;
+$tag-red: #EF4444;
