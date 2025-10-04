@@ -5,15 +5,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <button class="addBtn">Click me</button>
-    <button class="removeBtn">Remove a note</button>
+    <main>
+        <aside class="left-nav">
+            <div class="container">
+                <h1>NoteFlow</h1>
+                <button class="add-note">Add Note</button>
+                <button class="remove-note">Remove Note</button>
+            </div>
+        </aside>
 
-    <div class="container">
-        
-    </div>
+        <section class="notes-main">
+            <div class="notes-container">
+                <div class="search-wrapper">
+                    <input type="search" name="search" id="search" placeholder="Enter a note title to be searched">
+                </div>
+
+                <div class="notes-wrapper">
+                    <!-- <div class="note">
+                        <div class="note-title">Note 1</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 2</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-title">Note 3</div>
+                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
+                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
+                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
+                    </div> -->
+                    
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

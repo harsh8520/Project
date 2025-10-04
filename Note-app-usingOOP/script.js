@@ -1,4 +1,4 @@
-let container = document.querySelector('.container')
+let container = document.querySelector('.notes-wrapper')
 class Note {
     constructor(noteId, title, content) {
         this.noteId = noteId
@@ -13,9 +13,9 @@ class NoteApp {
         this.id = 0
     }
 
-    createNote() {
+    createNote(title, content) {
         let id = ++this.id
-        let newNote = new Note(id, `Note-${id}`, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae reprehenderit aperiam harum ullam necessitatibus. Dignissimos, optio dolore! At accusamus deleniti delectus vitae repudiandae, rem ad aspernatur in officiis hic. Nihil.')
+        let newNote = new Note(id, title, content)
         this.notes.push(newNote)
         return newNote
     }
@@ -24,16 +24,30 @@ class NoteApp {
         let h1 = document.createElement('h1')
         let p = document.createElement('p')
         let btn = document.createElement('button')
+
+        let noteDiv = document.createElement('div')
+        noteDiv.classList.add('note')
+        noteDiv.dataset.id = this.id
+
+        let titleDiv = document.createElement('div')
+        titleDiv.classList.add('note-title')
+        titleDiv.appendChild(h1)
+
+        let contentDiv = document.createElement('div')
+        contentDiv.classList.add('note-content')
+        contentDiv.appendChild(p)
+
         h1.textContent = `${newNote.title}`
         p.textContent = `${newNote.content}`
         btn.textContent = 'Click to Edit'
         btn.classList.add('editBtn')
 
-        container.appendChild(h1)
-        container.appendChild(p)
-        container.appendChild(btn)
+        noteDiv.appendChild(titleDiv)
+        noteDiv.appendChild(contentDiv)
+        noteDiv.appendChild(btn)
+        container.appendChild(noteDiv)
 
-        btn.addEventListener('click',()=>{
+        btn.addEventListener('click', () => {
             let newcontent = prompt("Enter a new Content")
             newNote.content = newcontent
             p.textContent = `${newNote.content}`
@@ -42,27 +56,32 @@ class NoteApp {
 
     renderAllNotes() {
         container.innerHTML = '';
-        this.notes.forEach((note)=>{this.renderNote(note)})
+        this.notes.forEach((note) => { this.renderNote(note) })
     }
 
-    removeNote(noteId) {
-        let newNotes = this.notes.filter(note => note.noteId !== noteId)
-        this.notes = newNotes
-        this.renderAllNotes()
+    removeNote(noteTitle) {
+        let note = this.notes.find(n => n.title.toLowerCase() == noteTitle.toLowerCase())
+        if (note == undefined) { alert("Please enter valid id") }
+        else {
+            let newNotes = this.notes.filter(note => note.title.toLowerCase() !== noteTitle.toLowerCase())
+            this.notes = newNotes
+            this.renderAllNotes()
+        }
     }
 }
-
 
 let na = new NoteApp();
 let elements;
 
-document.querySelector('.addBtn').addEventListener('click', () => {
-    let note = na.createNote()
+document.querySelector('.add-note').addEventListener('click', () => {   
+    let title = prompt("Enter a title for note")
+    let content = prompt("Enter a content for note")
+    let note = na.createNote(title, content)
     elements = na.renderNote(note)
 })
 
 
-document.querySelector('.removeBtn').addEventListener('click',()=>{
-    let id = Number(prompt("Enter a note Id"))
-    na.removeNote(id)
+document.querySelector('.remove-note').addEventListener('click', () => {
+    let title = prompt("Enter a note Title")
+    na.removeNote(title)
 })
