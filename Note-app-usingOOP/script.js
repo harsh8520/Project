@@ -74,6 +74,9 @@ let na = new NoteApp();
 let elements;
 let noteContainer = document.querySelector('.enter-note')
 
+let inputTitle = document.querySelector('#title')
+let inpContent = document.querySelector('#content')
+
 document.querySelector('.add-note').addEventListener('click', () => {
     noteContainer.style.display = 'block'
     noteContainer.style.opacity = '1'
@@ -87,24 +90,31 @@ document.querySelector('.remove-note').addEventListener('click', () => {
 })
 
 document.querySelector('.close').addEventListener('click', () => {
+    inputTitle.value = ''
+    inpContent.value = ''
     noteContainer.style.display = 'none'
     noteContainer.style.opacity = '0'
 })
-
 
 let handleTitle = () => {
     let note
     let title, content
     let done = document.querySelector('.done')
-    let inputTitle = document.querySelector('#title')
-    let inpContent = document.querySelector('#content')
     done.addEventListener('click', () => {
         title = inputTitle.value
         content = inpContent.value
-        note = na.createNote(title, content)
-        elements = na.renderNote(note)
-
+        if (title === '' || content === '') {
+            alert('Please Enter something')
+        }
+        else {
+            note = na.createNote(title, content)
+            elements = na.renderNote(note)
+            inputTitle.value = ''
+            inpContent.value = ''
+            title = inputTitle.value
+            content = inpContent.value
+            noteContainer.style.display = 'none'
+            noteContainer.style.opacity = '0'
+        }
     })
-    inputTitle.value = ''
-    inpContent.value = ''
 }
