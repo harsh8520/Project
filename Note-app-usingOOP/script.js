@@ -72,12 +72,12 @@ class NoteApp {
 
 let na = new NoteApp();
 let elements;
+let noteContainer = document.querySelector('.enter-note')
 
-document.querySelector('.add-note').addEventListener('click', () => {   
-    let title = prompt("Enter a title for note")
-    let content = prompt("Enter a content for note")
-    let note = na.createNote(title, content)
-    elements = na.renderNote(note)
+document.querySelector('.add-note').addEventListener('click', () => {
+    noteContainer.style.display = 'block'
+    noteContainer.style.opacity = '1'
+    handleTitle()
 })
 
 
@@ -85,3 +85,26 @@ document.querySelector('.remove-note').addEventListener('click', () => {
     let title = prompt("Enter a note Title")
     na.removeNote(title)
 })
+
+document.querySelector('.close').addEventListener('click', () => {
+    noteContainer.style.display = 'none'
+    noteContainer.style.opacity = '0'
+})
+
+
+let handleTitle = () => {
+    let note
+    let title, content
+    let done = document.querySelector('.done')
+    let inputTitle = document.querySelector('#title')
+    let inpContent = document.querySelector('#content')
+    done.addEventListener('click', () => {
+        title = inputTitle.value
+        content = inpContent.value
+        note = na.createNote(title, content)
+        elements = na.renderNote(note)
+
+    })
+    inputTitle.value = ''
+    inpContent.value = ''
+}

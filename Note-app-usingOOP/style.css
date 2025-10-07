@@ -35,6 +35,8 @@ main {
   border-radius: 15px;
   padding: 1rem;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+  transition: all 0.3s ease;
 }
 main .left-nav {
   width: 100%;
@@ -142,6 +144,7 @@ main .notes-main .notes-container .notes-wrapper .note {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
   gap: 1rem;
   background-color: rgba(255, 255, 255, 0.05);
   padding: 3rem;
@@ -154,4 +157,90 @@ main .notes-main .notes-container .notes-wrapper .note .note-title h1 {
 }
 main .notes-main .notes-container .notes-wrapper .note .note-content p {
   font-size: 1.2rem;
+}
+main .enter-note {
+  position: absolute;
+  display: none;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 10;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+main .enter-note .container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .enter-note .container input {
+  width: 100%;
+  font-size: 1.3rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #E2E8F0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+main .enter-note .container input:focus {
+  outline: none;
+  border-radius: 15px;
+}
+main .enter-note .container input:hover {
+  border-radius: 15px;
+}
+main .enter-note .container textarea {
+  padding: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #E2E8F0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  transition: border-radius 0.2s ease;
+  resize: vertical;
+  overflow: auto;
+}
+main .enter-note .container textarea:focus {
+  outline: none;
+  border-radius: 15px;
+}
+main .enter-note .container textarea:hover {
+  border-radius: 15px;
+}
+main .enter-note .container .btn-container {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+main .enter-note .container .btn-container button {
+  width: 100%;
+  padding: 0.6rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-width: 2px;
+  color: #E2E8F0;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+main .enter-note .container .btn-container button:hover {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+main .enter-note .container .btn-container .close {
+  background-color: #3B82F6;
+}
+main .enter-note .container .btn-container .close:hover {
+  background-color: #60A5FA;
 }/*# sourceMappingURL=style.css.map */
