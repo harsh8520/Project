@@ -13,21 +13,20 @@
         <div class="enter-note">
             <div class="container">
                 <input id="title" type="text" placeholder="Enter note title">
-                <textarea name="textarea" id="content" cols='50' rows="30"></textarea>
+                <textarea name="textarea" id="content" cols='50' rows="30" placeholder="Enter content"></textarea>
                 <div class="btn-container">
-                    <button class="done">Done</button>
-                    <button class="close">Close</button>
+                    <button onclick="addNote()" class="done">Done</button>
+                    <button onclick="handleCloseNote()" class="close">Close</button>
                 </div>
             </div>
         </div>
         <aside class="left-nav">
             <div class="container">
                 <h1>NoteFlow</h1>
-                <button class="add-note">Add Note</button>
+                <button onclick="addNoteHandler()" class="add-note">Add Note</button>
                 <button class="remove-note">Remove Note</button>
             </div>
         </aside>
-
         <section class="notes-main">
             <div class="notes-container">
                 <div class="search-wrapper">
@@ -35,103 +34,6 @@
                 </div>
 
                 <div class="notes-wrapper">
-                    <!-- <div class="note">
-                        <div class="note-title">Note 1</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 2</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-title">Note 3</div>
-                        <div class="note-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt magni,
-                            eum illo ut at voluptatibus alias quis asperiores. Culpa rerum commodi at. Reiciendis
-                            deleniti provident fugit laudantium, tenetur voluptatem porro?</div>
-                    </div> -->
 
                 </div>
             </div>

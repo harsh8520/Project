@@ -191,6 +191,27 @@ main {
                             font-size: 1.2rem;
                         }
                     }
+
+                    .editBtn {
+                        width: fit-content;
+                        margin-top: 1rem;
+                        padding: 0.6rem 2rem;
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                        border: $border-dark;
+                        border-width: 2px;
+                        color: $text-dark;
+                        border-radius: 5px;
+                        background: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        background: $button-bg-dark;
+
+                        &:hover {
+                            border-radius: 15px;
+                            background-color: $button-hover-dark;
+                        }
+                    }
                 }
             }
         }

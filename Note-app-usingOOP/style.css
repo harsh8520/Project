@@ -158,6 +158,26 @@ main .notes-main .notes-container .notes-wrapper .note .note-title h1 {
 main .notes-main .notes-container .notes-wrapper .note .note-content p {
   font-size: 1.2rem;
 }
+main .notes-main .notes-container .notes-wrapper .note .editBtn {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 1rem;
+  padding: 0.6rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-width: 2px;
+  color: #E2E8F0;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #3B82F6;
+}
+main .notes-main .notes-container .notes-wrapper .note .editBtn:hover {
+  border-radius: 15px;
+  background-color: #60A5FA;
+}
 main .enter-note {
   position: absolute;
   display: none;

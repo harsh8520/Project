@@ -9,12 +9,11 @@ class Note {
 
 class NoteApp {
     constructor() {
-        this.notes = []
-        this.id = 0
+        JSON.parse(localStorage.getItem('noteStorage')) == null ? this.notes = [] : this.notes = JSON.parse(localStorage.getItem('noteStorage'))
     }
 
     createNote(title, content) {
-        let id = ++this.id
+        let id = Date.now()
         let newNote = new Note(id, title, content)
         this.notes.push(newNote)
         return newNote
@@ -27,7 +26,6 @@ class NoteApp {
 
         let noteDiv = document.createElement('div')
         noteDiv.classList.add('note')
-        noteDiv.dataset.id = this.id
 
         let titleDiv = document.createElement('div')
         titleDiv.classList.add('note-title')
@@ -49,9 +47,14 @@ class NoteApp {
 
         btn.addEventListener('click', () => {
             let newcontent = prompt("Enter a new Content")
-            newNote.content = newcontent
-            p.textContent = `${newNote.content}`
+            if (newcontent == null) return
+            else {
+                newNote.content = newcontent
+                p.textContent = `${newNote.content}`
+                this.handleLocalStorage()
+            }
         })
+
     }
 
     renderAllNotes() {
@@ -66,55 +69,53 @@ class NoteApp {
             let newNotes = this.notes.filter(note => note.title.toLowerCase() !== noteTitle.toLowerCase())
             this.notes = newNotes
             this.renderAllNotes()
+            this.handleLocalStorage()
         }
+    }
+
+    handleLocalStorage() {
+        localStorage.setItem('noteStorage', JSON.stringify(this.notes))
+    }
+
+    renderNotesFromStorage() {
+        if (this.notes.length > 0) this.renderAllNotes()
     }
 }
 
 let na = new NoteApp();
+na.renderNotesFromStorage()
 let elements;
 let noteContainer = document.querySelector('.enter-note')
 
 let inputTitle = document.querySelector('#title')
 let inpContent = document.querySelector('#content')
 
-document.querySelector('.add-note').addEventListener('click', () => {
-    noteContainer.style.display = 'block'
+function addNoteHandler() {
     noteContainer.style.opacity = '1'
-    handleTitle()
-})
+    noteContainer.style.display = 'block'
+}
 
+function addNote() {
+    if (inputTitle.value == '' || inpContent.value == '') alert("Enter something")
+    else {
+        let note = na.createNote(inputTitle.value, inpContent.value)
+        na.renderNote(note)
+        inputTitle.value = ''
+        inpContent.value = ''
+        noteContainer.style.display = 'none'
+        noteContainer.style.opacity = '0'
+        na.handleLocalStorage()
+    }
+}
 
 document.querySelector('.remove-note').addEventListener('click', () => {
     let title = prompt("Enter a note Title")
     na.removeNote(title)
 })
 
-document.querySelector('.close').addEventListener('click', () => {
+function handleCloseNote() {
     inputTitle.value = ''
     inpContent.value = ''
     noteContainer.style.display = 'none'
     noteContainer.style.opacity = '0'
-})
-
-let handleTitle = () => {
-    let note
-    let title, content
-    let done = document.querySelector('.done')
-    done.addEventListener('click', () => {
-        title = inputTitle.value
-        content = inpContent.value
-        if (title === '' || content === '') {
-            alert('Please Enter something')
-        }
-        else {
-            note = na.createNote(title, content)
-            elements = na.renderNote(note)
-            inputTitle.value = ''
-            inpContent.value = ''
-            title = inputTitle.value
-            content = inpContent.value
-            noteContainer.style.display = 'none'
-            noteContainer.style.opacity = '0'
-        }
-    })
 }
