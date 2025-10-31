@@ -84,7 +84,6 @@ class NoteApp {
 
 let na = new NoteApp();
 na.renderNotesFromStorage()
-let elements;
 let noteContainer = document.querySelector('.enter-note')
 
 let inputTitle = document.querySelector('#title')
